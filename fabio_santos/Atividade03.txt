@@ -1,0 +1,7 @@
+1- RADIUS é um protocolo de rede que fornece gerenciamento centralizado de Autenticação, Autorização e Contabilização(Accounting em inglês) 
+para usuários que conectam-se a e utilizam um serviço de rede.
+  RADIUS é um protocolo do tipo cliente/servidor que roda como protocolo de camada de aplicação, usa como apoio o protocolo de 
+transferência UDP. Tanto Servidores de Acesso Remoto(RAS), como servidores de Redes Virtuais Privadas(VPNs) e Servidores de Acesso 
+de Redes(NAS), e todos os gateways que controlam o acesso a rede possuem um componente cliente do protocolo RADIUS que se comunica
+com o servidor RADIUS. Este servidor normalmente é um processo de background radando no UNIX ou Microsoft server.
+2- O endereço de origem e o de destino.
