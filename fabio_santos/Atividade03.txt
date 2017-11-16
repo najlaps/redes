@@ -4,4 +4,14 @@ para usuários que conectam-se a e utilizam um serviço de rede.
 transferência UDP. Tanto Servidores de Acesso Remoto(RAS), como servidores de Redes Virtuais Privadas(VPNs) e Servidores de Acesso 
 de Redes(NAS), e todos os gateways que controlam o acesso a rede possuem um componente cliente do protocolo RADIUS que se comunica
 com o servidor RADIUS. Este servidor normalmente é um processo de background radando no UNIX ou Microsoft server.
-2- O endereço de origem e o de destino.
+
+2- Network Working Group :C. Rigney, S. Willens, Livingston, A. Rubens, Merit, W. Simpson, Daydreamer.
+   Request for Comments: 2865                                    
+   Obsoletes: 2138                                               
+   Category: Standards Track  
+   Ano: June 2000  
+   Se existe alguma alteração: Errata Exist
+   
+3- Access-Request, Access-Challenge e Access-Accept.
+
+4- O nome do usuario, o IP de destino...
