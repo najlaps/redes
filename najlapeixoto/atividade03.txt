@@ -1,0 +1,10 @@
+
+01. Protocolo RADIUS é um protocolo de redes que fornece gerenciamento centralizado de Autenticação, Autorização e Contabilização para usuários que conectam-se a e utilizam um serviço de rede.
+
+02. Autores: C. Rigney, S. Willens, Livingston, A. Rubens, Merit, W. Simpson, Daydreamer.
+Data: June 2000
+Número da RFC: 2865
+
+03. Request, Challenge, Accept.
+
+04. Nome do usuário, servidor de destino, identificador
