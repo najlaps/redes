@@ -1,0 +1,14 @@
+1) Protocolo mais captura 802.11
+
+2) PHY type: 802.11g(6)
+   Proprietary mode: None(0)
+   Data rate: 24.0 Mb/s -> Taxa de transferencia.
+   Channel: 11
+   Frequency: 2462MHz 
+   Signal strength(dBm): -66dBm -> Distancia do roteador.
+   [Duration: 68us]
+   
+3) Ficar sem comunicação. Por falta de sinal telefonico e sem fio.
+
+4) Um exemplo é a tecnologia de células pequenas que reduz o tamanho dos sites das células. Isso torna as redes mais resilientes porque o tráfego pode ser transferido com mais facilidade para sites que não foram danificados. Outra lição chave foi a necessidade de operadoras de telefonia móvel trabalharem juntos e compartilhar infraestrutura para garantir que todos os clientes sem fio tenham acesso ao serviço, independentemente da operadora. Isso é útil se o equipamento de um operador cair.
+   Em dezembro de 2016, a FCC adotou uma Ordem de Resiliência Wireless Wireless em resposta à Superstorm Sandy. Ele configura um protocolo para que as operadoras ampliem o roaming durante as catástrofes e promovam a ajuda mútua entre operadoras sem fio durante emergências. Todas as principais operadoras de telefonia móvel voluntariamente assinaram o acordo.
