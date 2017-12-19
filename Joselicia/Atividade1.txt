@@ -1,0 +1,11 @@
+ATIVIDADE 1 – REDES
+
+Git é um sistema de controle de versão de arquivos. Através dele desenvolve-se projetos nos quais diversas pessoas podem contribuir simultaneamente no mesmo, editando e criando novos arquivos e permitindo que os mesmos possam existir sem o risco de suas alterações serem sobrescritas.
+
+Github é um serviço web que oferece diversas funcionalidades extras aplicadas ao git. Poderá ser usado gratuitamente para hospedar projetos pessoais.
+
+Quase todos os projetos/frameworks/bibliotecas sobre desenvolvimento open source estão no github, podendo serem acompanhados através de novas versões, contribuindo informando bugs ou enviando código e correções.
+
+Git é um programa que pode ser instalado através do comando sudo apt – get install git para plataformas Linux/Debian, como o Ubuntu.
+
+O github na possui instalação, ele é um serviço. Deve-se criar uma conta. Após criar a conta, em +New Repository, cria-se um repositório.
