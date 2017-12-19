@@ -1,0 +1,37 @@
+1) Todo modelo Mininet-WiFi é baseado no mesmo sistema de Mininet comum, gerando endereços MAC para as máquinas virtuais, assim como seus endereçamentos IP funcionam através de namespaces. As estações se comunicam através de um processo de autenticação, se comunicando com as estações de trabalho Mininet tanto cabeadas quanto sem fio. O funcionamento do Mininet-WiFi acontece de maneira semelhante ao funcionamento do Mininet padrão, mas caso a estrutura seja inicializada com o modo WiFi ativado, ele irá inicializar partindo de uma estrutura que compõe 3 interfaces sem
+fio (inicialização padrão). Por que como o Mininet-WiFi possamos nos livrar do cabeamento e fazer a comunicação normalmente outros hots.
+
+2) O endereço de origem e destino
+	PHY type: 802.11g(6)
+	Short preamble: false
+	Proprietary mode: Nane(0)
+	Data rate: 24,0 Mb/s
+	Charnel: 11
+	Frequency: 2462 MHz
+	Signal strength(dBm): -66dBm
+	[Duration: 68 Us]
+
+2.1) Atraso: 18.000ms. Não houve perda de pacote.
+
+2.2) 10.5 Mbits/sec, 10.6 Mbits/sec
+
+2.3) >No comando(py sta1.params): Informa os detalhes como: o ip, o range, o mec...
+     >No comando(py sta1.params['position']): Informa a posição
+     >No comando(py sta1.setPosition('10,20,0)): Define uma nova posição.
+
+3.1) O sta3. Por que não esta conectado ao AP1.
+
+3.2) Signal level = -72 dBm. O hosts esta um pouco distante do roteador.
+
+3.3) Em uma empresa que tem muitos hosts conectados no roteador, e precise de conexões separados por motivos de segurança.
+
+4.1) sta2: 16.4Mbits/sec e sta3: 16.7Mbits/sec.
+
+4.2) CCA(Limpar Avaliação Canal) é uma função lógica encontrado dentro de camadas físicas que determina o estado atual do uso de um meio sem fio, em outras palavras, esse mecanismo identifica se o canal esta livre para transmissão. Tal função é encontrado na rede IEEE 802.11. Normalmente os canais de rede wireless vão do canal 1 ao 14, o canal usado para a rede deve ser diferente dos demais canais ao seu redor e o mais distante deles possível.
+     Como funciona? O CCA indica se o canal é ideal ou não. Uma resposta negativa deste, considerando que o tempo de varredura de um canal é de 10 a 20 milissegundos, uma interface sem fio fará, no pior caso, varredura de 13 canais em 2.4GHz e mas 24 canais em 5.0GHz. A resposta negativa do CCA, indicando canal ocupado, varia em função do tipo de modulação utilizado. Para a modulação DSSS(Direct Sequence Spread Spectrum, usada em 802.11), há 4 técnicas de CCA e três delas demandam a capacidade de demodulação do pacote ou de detecção de sinal modulado, por sua vez, implica SINR em nível superior ao minimo para demodulação na menor velocidade (1Mbps). Na modulação OFDM(Orthogonal Frequency-Division Multiplexing, usada em 802.11a/g/n), o mecanismo CCA leva em consideração a possibilidade de detecção do preâmbulo do pacote para sinais entre -82dBm e -62dBm e a capacidade de demodulação de qualquer parte do pacote para siansi acima de -62dBm. Tendo acesso aos pacotes, como no firmware de rádios 802.11, isso torna possível a verificação da coincidência entre a demanda de transmissão e a ocorrência do preâmbulo.
+     Toda essa análise realizada pelo CCa automaticamente evita conflitos de canal usando o recurso de selsção de canal claro e totalmente consciente das vantagens da vinculação de canal, melhorando substancialmente a performace da rede wireless. Como mencionado, você pode encontrar esse recurso nas redes IEEE 802.11.
+
+
+
+
+
