@@ -1,0 +1,111 @@
+1.1) Aprendir a criar uma interface monitor e apartir dela fazer a captura da senha do AP.
+	> sudo airodump-ng mon0: Monstra os AP's que esteja ao alcançe, disponibilizando o MAC;
+	> airrodump-ng --bssid $MAC-DO-AP$ mon0 -w meu-arquivo-de-captura: Faz a captura das informações do AP;
+	> aircrack-ng -w meuarquivodesenha.psk -b $MAC-DO-AP$ meu-arquivo-de-captura.cap: Mostra a senha;
+
+1.2) A fase de geração e distribuição de chaves começa como o 4-way Handshake que permite que o ponto de acesso e a estação derivem a PTK(pairwise transient key) e realizem uma autenticação mútua. ... O ponto de acesso deriva a PTK e gera um GTK aleatoriamente.
+	> O host envia uma mensagem solicitando a conexão, o AP envia uma mensagem de key para o host, o AP envia um desafio para o host e o host responde o desafio.
+
+1.3) Sim. 
+
+Aireplay-ng é usado para injetar frames.
+
+A função principal é gerar tráfego para uso posterior no aircrack-ng para quebrar chaves WEP e WPA-PSK. Existem ataques diferentes que podem causar desautenticações com o propósito de capturar dados de handshake WPA, autenticações falsas, repetição de pacote interativo, injeção de ARP Request forjados e reinjeção de ARP Request. Com a ferramenta packetforge-ng é possível criar frames arbitrários.
+
+A maioria dos drivers precisam ser de 'patch' para poder realizar injeção de pacotes, não esqueça de ler Instalando drivers.
+Uso dos ataques
+
+Atualmente são implementados múltiplos ataques diferentes:
+
+    Ataque 0: Desautenticação
+    Ataque 1: Autenticação Falsa
+    Ataque 2: Replay (Repetição) de Pacote Interativo
+    Ataque 3: Ataque de Replay de ARP Request
+    Ataque 4: Ataque KoreK chopchop
+    Ataque 5: Ataque de fragmentação
+    Ataque 9: Teste de Injeção
+
+Uso
+
+Esta seção fornece uma visão geral. Nem todas as opções podem ser usadas em todos os ataques. Veja os detalhes do ataque específico para detalhes relevantes.
+
+Uso:
+
+ aireplay-ng <opções> <replay interface>
+
+Para todos os ataques, com exceção da desautenticação e autenticação falsa, você pode usar os seguintes filtros para limitar quais pacotes serão apresentados no ataque em particular. A opção de filtro mais comumente usada é a “-b” para selecionar um Access Point (AP) específico. Para uso normal, o “-b” é o único que você usa.
+
+Opções de Filtro:
+
+    -b bssid : Endereço MAC, Access Point
+    -d dmac : Endereço MAC, Destino
+    -s smac : Endereço MAC, Origem
+    -m len : tamanho mínimo do pacote
+    -n len : tamanho máximo do pacote
+    -u type : controle de frame, tipo campo
+    -v subt : controle de frame, subtipo campo
+    -t tods : controle de frame, Para DS bit
+    -f fromds : controle de frame, De DS bit
+    -w iswep : controle de frame, WEP bit
+
+Quando repetindo (injetando) pacotes, as opções a seguir podem ser usadas. Tenha em mente que nem todas as opções são relevantes para cada ataque. A documentação do ataque fornece exemplos das opções relevantes.
+
+Opções de Replay:
+
+    -x nbpps : número de pacotes por segundo
+    -p fctrl : configurar a palavra do controle de frame (hex)
+    -a bssid : configurar o endereço MAC do Access Point
+    -c dmac : configurar Destino Endereço MAC
+    -h smac : configurar Origem Endereço MAC
+    -e essid : ataque de autenticação falsa : configurar SSID do AP alvo
+    -j : ataque ARP Replau : injetar pacotes FromDS
+    -g value : mudar tamanho do ring buffer (padrão: 8)
+    -k IP : configurar o IP de destino em fragmentos
+    -l IP : configurar o IP da origem em fragmentos
+    -o npckts : número de pacotes por burst/rajada (-1)
+    -q sec : segundos entre keep-alives (-1)
+    -y prga : fluxo de chave para autenticação de chave compatilhada
+
+Os ataques podem obter pacotes para repetir (replay) de duas origens. A primeira sendo um fluxo ativo de pacotes da sua placa wireless. A segunda sendo de um arquivo pcap. Formato Pcap padrão (Packet CAPture ou CAPtura de Pacote, associado à biblioteca libpcap http://www.tcpdump.org), é reconhecida pela maioria das ferramentas open-source e comerciais de análise e captura de tráfego. Leitura de arquivo é geralmente uma característica despercebida do arieplay-ng. Isso permite que você leia pacotes de outras sessões de captura ou, quase sempre, vários ataques geram arquivos pcap para fácil reutilização.
+
+Opções da Origem:
+
+    -i iface : captura pacotes desta interface
+    -r file : extrai pacotes deste arquivo pcap
+
+Isso é como você especifica em qual modo (ataque) o programa irá operar. Dependendo do modo nem todas as opções acima são aplicáveis.
+
+Modos de Ataque (Números ainda podem ser usados):
+
+    - -deauth count : desautenticar 1 ou todas as estações (-0)
+    - -fakeauth delay : autenticação falsa com AP (-1)
+    - -interactive : seleção de frame interativo (-2)
+    - -arpreplay : replay de ARP Request padrão (-3)
+    - -chopchop : decifrar/fatiar(chopchop) pacote WEP (-4)
+    - -fragment : gera fluxo de chaves válido (-5)
+    - -test : teste de injeção (-9)
+
+1.4) Os métodos de defesa em redes sem fio dividem-se em diferentes níveis de eficiência quando  se  trata  de  proteger  as  informações dos  usuários. Os  pontos  principais  a  serem 
+observados  nessa  questão  estão  relacionados  à  abrangência  da  rede,  a  quantidade  de  hosts associados  e  principalmente  as  ferramentas  necessárias  para  garantir  o  uso  correto  dessa tecnologia  em  diferentes  ambientes.    Para  isso  a estratégia  de  segurança  deve  ser  bem definida, diferenciando-se em redes domésticas e coorporativas. Grande parte dessas técnicas de proteção a rede Wi-Fi são de simples realização e muitas vezes garantem a confiabilidade dos  dados. Abaixo  são  citadas  algumas  ações  recomendáveis 
+de prevenção a possíveis invasões: 
+
+a) mudar senha padrão de administrador do equipamento evita que essas senhas conhecidas sejam usadas em ataques ao concentrador; 
+
+b) usar padrão de criptografia apropriada, pois os equipamentos devem ser configurados conforme o ambiente onde estão inseridos;
+
+c) uso de controle de acesso via MAC permite que somente os equipamentos com endereços MAC previamente cadastrados possam acessar a rede Wirelles; 
+
+d)alteração do SSID impede que tentativas de ataque menos sofisticadas tenham acesso à rede; 
+
+e) desabilitar o broadcast do SSID impede que uma requisição para broadcast seja enviada ao AP;
+
+f) mudar a chave criptográfica padrão, pois a chave compartilhada padrão do fabricante é conhecida e deve ser modificada;
+
+g) mudar o canal padrão, pois a mudança diminui a possível interferência de rádios e consequentemente ataques de negação de serviço;
+
+h) utilizar IPs fixos, assim os riscos de acesso indevido são minimizados;
+
+i) execução de testes periódicos de segurança avalia possíveis vulnerabilidades da rede.
+
+
+
