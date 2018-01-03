@@ -1,0 +1,12 @@
+1. Ao tentar entrar na página o usuário teve o acesso bloqueado.
+
+2. Com este comando (sudo iptables -A INPUT -p tcp -s $IP_A_BLOQUEAR --dport 80 -j DROP.) apenas usuário especieficado terá 
+acesso negado, enquanto todos os outro terá acesso livremente.
+
+3.
+
+4. SSH é mais seguro, mais ultilizado, com criptografia.
+    Telnet é menos ultilizado por ser menos seguro.
+
+5. O acesso foi bloqueado.
+
