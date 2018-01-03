@@ -1,0 +1,11 @@
+1) Acesso negado.
+
+2) IP bloqueado para acesso.
+
+3) Com o comando ssh alunos@$IP_DO_COLEGA, faz o acesso da maquina do colega uma conexão remoto direta do terminal.
+
+4) Telnet é um protocolo cliente-servidor usado para permitir a comunicação entre computadores ligados numa rede (exemplos: rede local / LAN, Internet), baseado em TCP.
+Telnet é um protocolo de login remoto.
+   O serviço de SSH permite fazer o acesso remoto ao console de sua máquina, em outras palavras, você poderá acessar sua máquina como se estivesse conectado localmente ao seu console (substituindo o rlogin e rsh). A principal diferença com relação ao serviço telnet padrão, rlogin e rsh é que toda a comunicação entre cliente/servidor é feita de forma encriptada usando chaves públicas/privadas RSA para criptografia garantindo uma transferência segura de dados.
+
+5) Bloquea o acesso remoto, a maquina que estiver conectada fica travada.
