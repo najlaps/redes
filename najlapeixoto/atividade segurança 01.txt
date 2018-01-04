@@ -1,0 +1,11 @@
+Atividade sobre segurança 01
+
+1.1 Primeiro foi criado uma interface do tipo monitor, depois utilizar um comando (airodump-ng) para capturar beacons na interface criada.
+A interface monitor poder capturar tudo e quebrar senhas.
+Identificar o MEC do Ap e celular. Criara arquivo contendo várias senhas e umas dessas senhas será achada com o comando aircrack-ng -w meuarquivodesenha.psk -b 00:21:8D:25:1D:09 meu-arquivo-de-captura-01.cap
+
+1.2 A fase de geração e distribuição de chaves começa com o 4-Way Handshake que permite que o ponto de acesso e a estação derivem a PTK( pairwise transient key) e realizem uma autenticação mútua.
+O host envia mensagem solicitando uma conecxão, o ap envia uma mensagem para o host, o ap envia uma mensagem de desafio para o host e o mesmo responde.
+1.3
+1.4 Usando uma senha mais forte, com maior nível de dificuldade. 
+
