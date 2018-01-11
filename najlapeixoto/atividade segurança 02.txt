@@ -1,0 +1,12 @@
+
+2.1 Quando o usuário conecta a um site seguro, tranferindo informações criptografadas com o servidor, isso impede o ataque. 
+Quando o ataque SSLStrip é realizado impedimos a passagem do alvo através de técnicas man-in-the-middle, assim os atacantes 
+confundem o alvo,enganando o servidor passando-se por um cliente, dessa forma as informações são passadas para o atacante.
+
+2.2 
+ARP-Address Resolution Protocol (ARP), em português Protocolo de Resolução de Endereços, é um protocolo de telecomunicações 
+usado para resolução de endereços da camada de Internet em endereços da camada de enlace, uma função crítica em redes de 
+múltiplos acessos. 
+
+
+
